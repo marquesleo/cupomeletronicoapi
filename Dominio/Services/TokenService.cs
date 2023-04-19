@@ -39,7 +39,7 @@ namespace Dominio.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name,claims.Identity.Name ),
+                    new Claim(ClaimTypes.Name,claims.Identity.Name),
                     new Claim(ClaimTypes.NameIdentifier, claims.Identity.Name )
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),

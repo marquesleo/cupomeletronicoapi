@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1705.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupomEletronicoAPI", "CupomEletronicoAPI\CupomEletronicoAPI.csproj", "{7E622B61-7234-47BD-A85B-F0F9289F18FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CupomEletronicoAPI", "CupomEletronicoAPI\CupomEletronicoAPI.csproj", "{7E622B61-7234-47BD-A85B-F0F9289F18FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{5D3E76B5-BE80-40BB-9EA5-16F57C4444B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{5D3E76B5-BE80-40BB-9EA5-16F57C4444B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "biblioteca", "biblioteca", "{8F7413F8-82D8-428E-9FB8-F38FADA7EEAF}"
+	ProjectSection(SolutionItems) = preProject
+		biblioteca\Vestillo.Business.dll = biblioteca\Vestillo.Business.dll
+		biblioteca\Vestillo.Connection.dll = biblioteca\Vestillo.Connection.dll
+		biblioteca\Vestillo.Core.dll = biblioteca\Vestillo.Core.dll
+		biblioteca\Vestillo.Lib.dll = biblioteca\Vestillo.Lib.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
