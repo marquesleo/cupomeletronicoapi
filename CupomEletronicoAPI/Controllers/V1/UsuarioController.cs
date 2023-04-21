@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System.Text;
 
 namespace CupomEletronicoAPI.Controllers
 {
@@ -18,6 +19,9 @@ namespace CupomEletronicoAPI.Controllers
             this.config = configuration;
             Dominio.ConfigVestillo.Iniciar(config.GetConnectionString("db"),
                                             Convert.ToInt32(config.GetSection("parametros").GetSection("empresa").Value));
+
+            System.Text.EncodingProvider ppp = System.Text.CodePagesEncodingProvider.Instance;
+            Encoding.RegisterProvider(ppp);
         }
 
 

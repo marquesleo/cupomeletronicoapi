@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "biblioteca", "biblioteca", "{8F7413F8-82D8-428E-9FB8-F38FADA7EEAF}"
 	ProjectSection(SolutionItems) = preProject
+		biblioteca\Dapper.dll = biblioteca\Dapper.dll
 		biblioteca\Vestillo.Business.dll = biblioteca\Vestillo.Business.dll
 		biblioteca\Vestillo.Connection.dll = biblioteca\Vestillo.Connection.dll
 		biblioteca\Vestillo.Core.dll = biblioteca\Vestillo.Core.dll
