@@ -6,7 +6,9 @@ namespace Dominio.Services.Interface
 	public interface IUsuario
 	{
         AuthenticateResponse Authenticate(Usuario usuario);
-        Usuario ObterUsuario(string QrCode);
+        Task<AuthenticateResponse> RefreshToken(RefreshTokenView refreshToken);
+        Models.Usuario ObterUsuario(string QrCode);
+        Models.Usuario ObterUsuario(int idUsuario);
 
     }
 }

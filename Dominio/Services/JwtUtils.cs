@@ -15,17 +15,13 @@ namespace Dominio.Services
     {
         //public string GenerateJwtToken(Usuario user);
         public string ValidateJwtToken(string token);
-        public RefreshToken GenerateRefreshToken(string ipAddress);
+        public RefreshToken GenerateRefreshToken();
     }
 
     public class JwtUtils : IJwtUtils
     {
-        private readonly IUsuario _usuarioService;
-        public JwtUtils(IUsuario usuarioService)
-        {
-            _usuarioService = usuarioService;
-        }
-
+     
+       
         /*public string GenerateJwtToken(Usuario user)
         {
             // generate token that is valid for 15 minutes
@@ -73,7 +69,7 @@ namespace Dominio.Services
             }
         }
 
-        public RefreshToken GenerateRefreshToken(string ipAddress)
+        public RefreshToken GenerateRefreshToken()
         {
             var refreshToken = new RefreshToken
             {
@@ -81,8 +77,7 @@ namespace Dominio.Services
                 // token is valid for 7 days
                 Expires = DateTime.UtcNow.AddDays(7),
                 Created = DateTime.UtcNow,
-                CreatedByIp = ipAddress
-            };
+             };
 
             return refreshToken;
 

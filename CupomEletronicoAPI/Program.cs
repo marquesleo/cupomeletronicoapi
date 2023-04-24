@@ -23,6 +23,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ErrorHandlerMiddleware>();
+//custom jwt auth middleware
+app.UseMiddleware<JwtMiddleware>();
+
 app.UseRouting();
 app.UseCors(x => x
  .AllowAnyOrigin()
@@ -33,11 +37,12 @@ app.UseCookiePolicy();
 app.UseAuthentication();//parte do JWT
 app.UseAuthorization();
 
-app.UseMiddleware<ErrorHandlerMiddleware>();
-// custom jwt auth middleware
-app.UseMiddleware<JwtMiddleware>();
 
-app.MapControllers();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Dominio.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -20,7 +21,7 @@ namespace CupomEletronicoAPI.Controllers
             Dominio.ConfigVestillo.Iniciar(config.GetConnectionString("db"),
                                             Convert.ToInt32(config.GetSection("parametros").GetSection("empresa").Value));
 
-            System.Text.EncodingProvider ppp = System.Text.CodePagesEncodingProvider.Instance;
+            EncodingProvider ppp = CodePagesEncodingProvider.Instance;
             Encoding.RegisterProvider(ppp);
         }
 
@@ -28,7 +29,7 @@ namespace CupomEletronicoAPI.Controllers
         [HttpPost]
         [Route("autenticar")]
         [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> Autenticar([FromBody] Dominio.Models.Usuario usuarioViewModel)
+        public async Task<ActionResult<dynamic>> Autenticar([FromBody] Usuario usuarioViewModel)
         {
             try
             {
@@ -54,7 +55,25 @@ namespace CupomEletronicoAPI.Controllers
                 return StatusCode(500, new { message = ex.Message });
             }
 
+        }
 
+
+        [AllowAnonymous]
+        [Route("refresh-token")]
+        [HttpPost]
+        public async Task<IActionResult> RefreshToken(RefreshTokenView refreshTokenView)
+        {
+            if (refreshTokenView != null && !string.IsNullOrEmpty(refreshTokenView.refreshtoken))
+            {
+                var response = await _usuarioService.RefreshToken(refreshTokenView);
+
+                if (response == null)
+                    return Unauthorized(new { message = "Invalid token" });
+
+                return Ok(response);
+            }
+            else
+                return NoContent();
         }
 
     }
