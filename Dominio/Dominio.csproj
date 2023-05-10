@@ -10,12 +10,22 @@
     <None Remove="Models\" />
     <None Remove="Services\" />
     <None Remove="Services\Interface\" />
+    <None Remove="Models\DTO\" />
+    <None Remove="Handlers\" />
+    <None Remove="Queries\" />
+    <None Remove="Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\Interface\" />
+    <Folder Include="Models\DTO\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.29.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Vestillo.Business">

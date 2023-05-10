@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 
-namespace CupomEletronicoAPI.Controllers
+namespace CupomEletronicoAPI.Controllers.V1
 {
     [Route("api/v{version:apiVersion}/usuario")]
     [ApiController]
@@ -14,15 +14,11 @@ namespace CupomEletronicoAPI.Controllers
     public class UsuarioController : BaseController
     {
         private Dominio.Services.Interface.IUsuario _usuarioService;
-        public UsuarioController(Dominio.Services.Interface.IUsuario usuarioService, IConfiguration configuration)
+        public UsuarioController(Dominio.Services.Interface.IUsuario usuarioService,
+                                 IConfiguration configuration):base(configuration)
         {
             this._usuarioService = usuarioService;
-            this.config = configuration;
-            Dominio.ConfigVestillo.Iniciar(config.GetConnectionString("db"),
-                                            Convert.ToInt32(config.GetSection("parametros").GetSection("empresa").Value));
-
-            EncodingProvider ppp = CodePagesEncodingProvider.Instance;
-            Encoding.RegisterProvider(ppp);
+          
         }
 
 
@@ -73,7 +69,7 @@ namespace CupomEletronicoAPI.Controllers
                 return Ok(response);
             }
             else
-                return NoContent();
+                return Unauthorized(new { message = "Invalid token" });
         }
 
     }

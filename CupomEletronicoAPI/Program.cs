@@ -1,5 +1,7 @@
-﻿using CupomEletronicoAPI;
+﻿using System.Reflection;
+using CupomEletronicoAPI;
 using CupomEletronicoAPI.Extensions;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 builder.Services.ConfigureJWT();
 builder.Services.ConfigureDependences(Configuration);
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.Init(Configuration);
 var app = builder.Build();
 
