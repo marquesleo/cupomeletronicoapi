@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "3TWYIEElu3VyuxrY65wmTNyFKteIz2sV1b6B+CxIz97HkwLxf7W+DIM1SxQ+7a7s/oUtNal6oMCEGA7ZZwTHhQ==",
+  "dgSpecHash": "/NYwwz5/a476nJk+qlnN2zciv6dUbZOMYHcC9TPcOIQGy+YGduqNmD9e2w4BanzSBxSYQiQC3P5RxZ71TkJbTw==",
   "success": true,
   "projectFilePath": "/Users/leonardomsilva/Projects/CupomEletronicoAPI/Dominio/Dominio.csproj",
   "expectedPackageFiles": [
-    "/Users/leonardomsilva/.nuget/packages/mediatr/11.0.0/mediatr.11.0.0.nupkg.sha512",
+    "/Users/leonardomsilva/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/leonardomsilva/.nuget/packages/mediatr/11.1.0/mediatr.11.1.0.nupkg.sha512",
     "/Users/leonardomsilva/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
     "/Users/leonardomsilva/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.0.0/mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
-    "/Users/leonardomsilva/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/leonardomsilva/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/leonardomsilva/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "/Users/leonardomsilva/.nuget/packages/microsoft.identitymodel.abstractions/6.29.0/microsoft.identitymodel.abstractions.6.29.0.nupkg.sha512",
     "/Users/leonardomsilva/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.29.0/microsoft.identitymodel.jsonwebtokens.6.29.0.nupkg.sha512",

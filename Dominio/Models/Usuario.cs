@@ -6,6 +6,7 @@ namespace Dominio.Models
 		public int Id { get; set; }
 		public string Nome { get; set; }
 		public string QrCode { get; set; }
+		public bool UtilizaCupom { get; set; }
 	}
 }
 

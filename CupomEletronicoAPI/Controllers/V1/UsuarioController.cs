@@ -30,7 +30,7 @@ namespace CupomEletronicoAPI.Controllers.V1
             try
             {
                 if (ModelState.IsValid)
-                {
+                { 
                     var usuario = _usuarioService.ObterUsuario(usuarioViewModel.QrCode);
                    
                     if (usuario == null || usuario.Id == 0)

@@ -9,7 +9,7 @@ namespace Dominio
         {
             Vestillo.Connection.ProviderFactory.StringConnection = connectionString;
             Vestillo.Lib.Funcoes.SetIdEmpresaLogada = empresa;
-            Vestillo.Lib.Funcoes.UtilizaAPI = true;
+            
         }
        
     }

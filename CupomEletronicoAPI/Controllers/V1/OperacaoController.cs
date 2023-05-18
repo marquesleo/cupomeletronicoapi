@@ -26,15 +26,12 @@ namespace CupomEletronicoAPI.Controllers.V1
             try
             {
                 var retorno = await sender.Send(new Dominio.Queries.OperacaoQuery { IdFuncionario = idFuncionario });
-
-                if (retorno != null && retorno.Any())
-                    return Ok(retorno);
-                else
-                    return NotFound();
+                return Ok(retorno);
+               
             }
             catch (Exception ex)
             {
-                return BadRequest("Erro ao retornar operacao por Id Funcionario " + ex.Message);
+                return StatusCode(401,"Erro ao retornar operacao por Id Funcionario " + ex.Message);
             }
           
 

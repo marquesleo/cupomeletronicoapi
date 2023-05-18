@@ -88,10 +88,16 @@ namespace CupomEletronicoAPI.Extensions
                                                 IConfiguration configuration)
         {
             services.AddSingleton<Dominio.Services.VestilloRotinas.Interface.IFuncionarioService, Dominio.Services.VestilloRotinas.FuncionarioService>();
+            services.AddSingleton<Dominio.Services.VestilloRotinas.Interface.IOperacaoService, Dominio.Services.VestilloRotinas.OperacaoService>();
             services.AddSingleton<IUsuario,UsuarioService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IJwtUtils, JwtUtils>();
-           
+          
+        }
+
+        public static void ConfigureAutoMapper(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(Dominio.Mapper.OperacaoMapper));
         }
 
 

@@ -16,7 +16,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 builder.Services.ConfigureJWT();
 builder.Services.ConfigureDependences(Configuration);
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.ConfigureAutoMapper();
+
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly(),
+                           typeof(Dominio.Queries.OperacaoQuery).Assembly,
+                            typeof(Dominio.Commands.SalvarOperacaoCommand).Assembly);
+
+
 builder.Services.Init(Configuration);
 var app = builder.Build();
 

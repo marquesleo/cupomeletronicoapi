@@ -3,7 +3,7 @@ namespace Dominio.Services.VestilloRotinas.Interface
 {
 	public interface IOperacaoService
 	{
-       Task <IEnumerable<Vestillo.Business.Models.OperacaoFaccaoView>> ObterOperacoes(int idFuncionario);
+       Task <IEnumerable<Vestillo.Business.Models.GrupoOperacoesView>> ObterOperacoes(int idFuncionario);
     }
 
 }

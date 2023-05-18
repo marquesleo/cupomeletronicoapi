@@ -43,7 +43,8 @@ namespace Dominio.Services
                 {
                     Id = funcionario.Id,
                     Nome = funcionario.Nome,
-                    QrCode = QrCode
+                    QrCode = QrCode,
+                    UtilizaCupom = Convert.ToBoolean(funcionario.UsaCupom)
                 };
             }
             return null;

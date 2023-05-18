@@ -7,21 +7,22 @@ namespace Dominio.Services.VestilloRotinas
 	public class OperacaoService : Interface.IOperacaoService
     {
 
-        private OperacaoFaccaoRepository? _OperacaoFaccaoRepository;
-        private OperacaoFaccaoRepository OperacaoFaccaoRepository
+        private GrupoOperacoesRepository? _GrupoOperacoesRepository;
+        private GrupoOperacoesRepository GrupoOperacoesRepository
         {
             get
             {
-                if (_OperacaoFaccaoRepository == null)
-                    _OperacaoFaccaoRepository = new OperacaoFaccaoRepository();
-                return _OperacaoFaccaoRepository;
+                if (_GrupoOperacoesRepository == null)
+                    _GrupoOperacoesRepository = new GrupoOperacoesRepository();
+                return _GrupoOperacoesRepository;
             }
         }
               
 
-        public async  Task<IEnumerable<OperacaoFaccaoView>> ObterOperacoes(int idFuncionario)
+        public async  Task<IEnumerable<GrupoOperacoesView>> ObterOperacoes(int idFuncionario)
         {
-            return OperacaoFaccaoRepository.GetByFuncionario(idFuncionario);
+            return GrupoOperacoesRepository.GetbyOperacoesPorOperador(idFuncionario,true);
+
         }
     }
 }
