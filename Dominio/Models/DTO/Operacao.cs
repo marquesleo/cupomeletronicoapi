@@ -23,6 +23,17 @@ namespace Dominio.Models.DTO
         public string? Faccao { get; set; }
         public string? Funcionario { get; set; }
         public DateTime? DataConclusao { get; set; }
+
+        public bool FeiFeita
+        {
+            get
+            {
+                if (DataConclusao == null)
+                    return false;
+
+                return DataConclusao.Value.Year > 1900;
+            }
+        }
         public int? QtdOperacao { get; set; }
         public int? SequenciaQuebra { get; set; }
         public string? QuebraManual { get; set; }
