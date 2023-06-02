@@ -37,18 +37,47 @@ namespace CupomEletronicoAPI.Controllers.V1
 
         }
 
+        [HttpGet()]
+        [Route("ObterPorPacote/{idPacote}")]
+        public async Task<IActionResult> ObterOperacaoPorIdDoPacote(int idPacote)
+        {
+            try
+            {
+                var retorno = await sender.Send(new Dominio.Queries.NumeroDoPacoteQuery { NumeroDoPacote = idPacote });
+                return Ok(retorno);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(401, "Erro ao retornar operacao por Id do Pacote " + ex.Message);
+            }
+
+
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> SalvarOperacao([FromBody] List<Dominio.Models.DTO.Operacao> operacoes)
         {
             try
             {
-                await sender.Send(new Dominio.Commands.SalvarOperacaoCommand(operacoes));
+                if (ModelState.IsValid)
+                {
+                    if (operacoes.All(p=> !p.concluido ))
+                        return BadRequest(new { message = "Operações não estao concluidas! Pois precisam ser concluídas" });
+
+                    if (operacoes.All(p=> p.DataConclusao != null ))
+                        return BadRequest(new { message = "Todas as Operações Já foram concluídas!" });
+
+                    var operacoesConcluidas = operacoes.Where(p => p.concluido).ToList();
+                    await sender.Send(new Dominio.Commands.SalvarOperacaoCommand(operacoesConcluidas));
+                }
                 return StatusCode(201);
             }
             catch (Exception ex)
             {
-                return BadRequest("Erro ao Salvar operacoes " + ex.Message);
+                return BadRequest(new { message = "Erro ao Salvar operacoes " + ex.Message });
             }
            
             

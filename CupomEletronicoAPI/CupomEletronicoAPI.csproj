@@ -21,6 +21,7 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,17 +36,17 @@
     <Compile Remove="Queries\OperacaoQuery.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Vestillo.Connection">
-      <HintPath>..\biblioteca\Vestillo.Connection.dll</HintPath>
-    </Reference>
-    <Reference Include="Vestillo.Core">
-      <HintPath>..\biblioteca\Vestillo.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Vestillo.Lib">
       <HintPath>..\biblioteca\Vestillo.Lib.dll</HintPath>
     </Reference>
     <Reference Include="Vestillo.Business">
       <HintPath>..\biblioteca\Vestillo.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Vestillo.Connection">
+      <HintPath>..\biblioteca\Vestillo.Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="Vestillo.Core">
+      <HintPath>..\biblioteca\Vestillo.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

@@ -17,13 +17,32 @@ namespace Dominio.Services.VestilloRotinas
                 return _GrupoOperacoesRepository;
             }
         }
-              
 
-        public async  Task<IEnumerable<GrupoOperacoesView>> ObterOperacoes(int idFuncionario)
+
+       
+
+        private TempoFuncionarioRepository _TempoFuncionarioRepository;
+        private TempoFuncionarioRepository TempoFuncionarioRepository
+        {
+            get
+            {
+                if (_TempoFuncionarioRepository == null)
+                    _TempoFuncionarioRepository = new TempoFuncionarioRepository();
+                return _TempoFuncionarioRepository;
+            }
+        }
+
+        public async Task<IEnumerable<GrupoOperacoesView>> ObterOperacoes(int idFuncionario)
         {
             return GrupoOperacoesRepository.GetbyOperacoesPorOperador(idFuncionario,true);
-
         }
+
+        public async Task<IEnumerable<GrupoOperacoesView>> ObterOperacoesDoPacote(int grupoDoPacote, int pacoteId)
+        {
+            return GrupoOperacoesRepository.GetListByGrupoPacoteVisualizar(grupoDoPacote,pacoteId);
+        }
+
+       
     }
 }
 

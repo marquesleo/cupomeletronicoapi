@@ -35,7 +35,7 @@ namespace Dominio.Services
 
         public Models.Usuario ObterUsuario(string QrCode)
         {
-            int id = 1;
+            int id = Convert.ToInt32(QrCode);
             var funcionario = _funcionarioService.ObterPorId(id);
             if (funcionario != null && funcionario.Id > 0)
             {
@@ -52,15 +52,17 @@ namespace Dominio.Services
 
         public Models.Usuario ObterUsuario(int idUsuario)
         {
-            int id = 1;
+            int id = idUsuario;
             var funcionario = _funcionarioService.ObterPorId(id);
             if (funcionario != null && funcionario.Id > 0)
             {
-                return new Models. Usuario
+                return new Models.Usuario
                 {
                     Id = funcionario.Id,
-                    Nome = funcionario.Nome
-                    
+                    Nome = funcionario.Nome,
+                    QrCode = "",
+                    UtilizaCupom = Convert.ToBoolean(funcionario.UsaCupom)
+
                 };
             }
             return null;
