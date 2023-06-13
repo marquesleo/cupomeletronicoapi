@@ -26,10 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj" />
-    <ProjectReference Include="..\vestillo\Vestillo.Business\Vestillo.Business.csproj" />
-    <ProjectReference Include="..\vestillo\Vestillo.Connection\Vestillo.Connection.csproj" />
-    <ProjectReference Include="..\vestillo\Vestillo.Core\Vestillo.Core.csproj" />
-    <ProjectReference Include="..\vestillo\Vestillo.Lib\Vestillo.Lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,5 +34,20 @@
     <Compile Remove="Handlers\ObterOperacaoHandler.cs" />
     <Compile Remove="Queries\NumeroDoPacoteQuery.cs" />
     <Compile Remove="Queries\OperacaoQuery.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Vestillo.Business">
+      <HintPath>..\biblioteca\Vestillo.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Vestillo.Connection">
+      <HintPath>..\biblioteca\Vestillo.Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="Vestillo.Core">
+      <HintPath>..\biblioteca\Vestillo.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vestillo.Lib">
+      <HintPath>..\biblioteca\Vestillo.Lib.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

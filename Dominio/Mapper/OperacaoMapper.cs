@@ -9,8 +9,8 @@ namespace Dominio.Mapper
 		public OperacaoMapper()
         {
 
-            CreateMap<GrupoOperacoesView, Models.DTO.Operacao>();
-            CreateMap<Models.DTO.Operacao, GrupoOperacoesView>();
+            CreateMap<OperacoesPorOperacaoCupom, Models.DTO.Operacao>();
+            CreateMap<Models.DTO.Operacao, OperacoesPorOperacaoCupom>();
             
         }
 	}

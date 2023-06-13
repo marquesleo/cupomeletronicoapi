@@ -75,10 +75,14 @@ namespace Dominio.Services
                 RefreshToken refresh = new RefreshToken();
                 var usuario = ObterUsuario(refreshTokenView.idusuario);
                 // generate new jwt
-                var jwtToken = TokenService.GenerateToken(usuario);
-               
-                var newRefreshToken = rotateRefreshToken(refresh);
-                return new AuthenticateResponse(usuario, jwtToken, newRefreshToken.Token);
+                if (usuario != null)
+                {
+                    var jwtToken = TokenService.GenerateToken(usuario);
+
+                    var newRefreshToken = rotateRefreshToken(refresh);
+                    return new AuthenticateResponse(usuario, jwtToken, newRefreshToken.Token);
+                }
+                return null;
             }
             catch (Exception ex)
             {

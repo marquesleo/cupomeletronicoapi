@@ -32,7 +32,7 @@ namespace Dominio.Services.VestilloRotinas
             }
         }
 
-        public async Task<IEnumerable<GrupoOperacoesView>> ObterOperacoes(int idFuncionario)
+        public async Task<IEnumerable<OperacoesPorOperacaoCupom>> ObterOperacoes(int idFuncionario)
         {
             return GrupoOperacoesRepository.GetbyOperacoesPorOperador(idFuncionario,true);
         }
