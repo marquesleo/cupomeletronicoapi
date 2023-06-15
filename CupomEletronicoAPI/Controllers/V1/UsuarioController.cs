@@ -18,7 +18,15 @@ namespace CupomEletronicoAPI.Controllers.V1
                                  IConfiguration configuration):base(configuration)
         {
             this._usuarioService = usuarioService;
-          
+
+        }
+
+
+        [HttpGet, Route("version")]
+        [AllowAnonymous]
+        public ActionResult<string> Version()
+        {
+            return Ok("1.0");
         }
 
 

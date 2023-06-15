@@ -26,8 +26,10 @@ namespace CupomEletronicoAPI.Controllers.V1
             try
             {
                 var retorno = await sender.Send(new Dominio.Queries.OperacaoQuery { IdFuncionario = idFuncionario });
-                return Ok(retorno);
-               
+                if (retorno != null && retorno.Any())
+                    return Ok(retorno);
+                else
+                    return BadRequest(new { message = "Nenhuma Operação encontrada!" });
             }
             catch (Exception ex)
             {
@@ -47,7 +49,7 @@ namespace CupomEletronicoAPI.Controllers.V1
                 if (retorno != null && retorno .Any())
                 return Ok(retorno);
                 else
-                    return BadRequest(new { message = "Nenhum Pacote encontrada!" });
+                    return BadRequest(new { message = "Nenhum Pacote encontrado!" });
 
 
             }

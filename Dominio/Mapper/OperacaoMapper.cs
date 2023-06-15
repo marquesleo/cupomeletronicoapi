@@ -11,7 +11,9 @@ namespace Dominio.Mapper
 
             CreateMap<OperacoesPorOperacaoCupom, Models.DTO.Operacao>();
             CreateMap<Models.DTO.Operacao, OperacoesPorOperacaoCupom>();
-            
+           
+            CreateMap<GrupoOperacoesView, Models.DTO.Operacao>();
+            CreateMap<Models.DTO.Operacao, GrupoOperacoesView>();
         }
 	}
 }

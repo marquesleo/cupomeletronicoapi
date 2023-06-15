@@ -24,7 +24,7 @@ namespace Dominio.Models.DTO
         public string? Funcionario { get; set; }
         public DateTime? DataConclusao { get; set; }
 
-        public bool FeiFeita
+        public bool FoiFeita
         {
             get
             {
