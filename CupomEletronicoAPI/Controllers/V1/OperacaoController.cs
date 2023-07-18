@@ -20,7 +20,8 @@ namespace CupomEletronicoAPI.Controllers.V1
 
         public OperacaoController(IConfiguration configuration, ISender sender):base(configuration) => this.sender = sender;
 
-        [HttpGet("{idFuncionario:int}")]
+        [HttpGet()]
+        [Route("ObterPorFuncionario/{idFuncionario}")]
         public async Task<IActionResult> ObterOperacaoPorIdFuncionario(int idFuncionario)
         {
             try
@@ -56,6 +57,27 @@ namespace CupomEletronicoAPI.Controllers.V1
             catch (Exception ex)
             {
                 return StatusCode(401, "Erro ao retornar operacao por Id do Pacote " + ex.Message);
+            }
+
+
+        }
+
+        [HttpGet()]
+        [Route("ObterTempoDeProducao/{idUsuario}")]
+        public async Task<IActionResult> ObterTempoDeProducao(int idUsuario)
+        {
+            try
+            {
+                var retorno = await sender.Send(new Dominio.Queries.IdDoFuncionarioQuery {  idDoFuncionario = idUsuario });
+               
+                    return Ok(retorno?.Tempo);
+              
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(401, "Erro ao retornar ObterTempoDeProducao " + ex.Message);
             }
 
 

@@ -13,6 +13,16 @@ namespace Dominio.Models.DTO
         public int? BalanceamentoId { get; set; }
         public int? GrupoPacoteId { get; set; }
         public string? TituloCupom { get; set; }
+        public string? strTituloCupom
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(TituloCupom) && TituloCupom.Length > 26)
+                    return TituloCupom.Substring(0, 26);
+                else
+                    return TituloCupom;
+            }
+        }
         public int? OperacaoPadraoId { get; set; }
         public decimal? Tempo { get; set; }
         public decimal? TempoCalculado { get; set; }
@@ -23,7 +33,8 @@ namespace Dominio.Models.DTO
         public string? Faccao { get; set; }
         public string? Funcionario { get; set; }
         public DateTime? DataConclusao { get; set; }
-
+        public bool flag { get; set; } = true;
+        public string nomeDoBotao { get; set; } = "Concluído";
         public bool FoiFeita
         {
             get

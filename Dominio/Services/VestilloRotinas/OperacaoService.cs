@@ -19,7 +19,16 @@ namespace Dominio.Services.VestilloRotinas
         }
 
 
-       
+        private ProdutividadeRepository _produtividadeRepository;
+        private ProdutividadeRepository ProdutividadeRepository
+        {
+            get
+            {
+                if (_produtividadeRepository == null)
+                    _produtividadeRepository = new ProdutividadeRepository();
+                return _produtividadeRepository;
+            }
+        }
 
         private TempoFuncionarioRepository _TempoFuncionarioRepository;
         private TempoFuncionarioRepository TempoFuncionarioRepository
@@ -42,7 +51,13 @@ namespace Dominio.Services.VestilloRotinas
             return GrupoOperacoesRepository.GetListByGrupoPacoteVisualizar(grupoDoPacote,pacoteId);
         }
 
-       
+        public async Task<Produtividade> ObterTempoDeOperacao(int idUsuario)
+        {
+            return ProdutividadeRepository.GetByFuncionarioIdEData(idUsuario,DateTime.Now.Date);
+        }
+
+
+
     }
 }
 
