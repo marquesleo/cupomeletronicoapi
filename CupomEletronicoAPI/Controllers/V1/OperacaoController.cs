@@ -30,7 +30,7 @@ namespace CupomEletronicoAPI.Controllers.V1
                 if (retorno != null && retorno.Any())
                     return Ok(retorno);
                 else
-                    return BadRequest(new { message = "Nenhuma Operação encontrada!" });
+                    return Ok(new List<Dominio.Models.DTO.Operacao>());
             }
             catch (Exception ex)
             {
@@ -47,10 +47,10 @@ namespace CupomEletronicoAPI.Controllers.V1
             try
             {
                 var retorno = await sender.Send(new Dominio.Queries.NumeroDoPacoteQuery { NumeroDoPacote = idPacote });
-                if (retorno != null && retorno .Any())
-                return Ok(retorno);
+                if (retorno != null && retorno.Any())
+                    return Ok(retorno);
                 else
-                    return BadRequest(new { message = "Nenhum Pacote encontrado!" });
+                    return Ok(new List<Dominio.Models.DTO.Operacao>());
 
 
             }
@@ -59,6 +59,48 @@ namespace CupomEletronicoAPI.Controllers.V1
                 return StatusCode(401, "Erro ao retornar operacao por Id do Pacote " + ex.Message);
             }
 
+
+        }
+
+        [HttpGet()]
+        [Route("ObterOperacoesPorPacote/{idPacote}")]
+        public async Task<IActionResult> ObterOperacoesPorIdDoPacote(string idPacote)
+        {
+            var listaOperacoes = new List<Dominio.Models.DTO.Operacao>();
+            try
+            {
+                if (!string.IsNullOrEmpty(idPacote))
+                {
+                    var vetor = idPacote.Split(',');
+                    if (vetor != null && vetor.Length > 0)
+                    {
+                        var vetorDistinto = vetor.Distinct();
+
+                        if (vetorDistinto != null && vetorDistinto.Count() > 0)
+                        {
+                            foreach (var item in vetorDistinto)
+                            {
+                                var retorno = await sender.Send(new Dominio.Queries.NumeroDoPacoteQuery { NumeroDoPacote = Convert.ToInt32(item.Trim()) });
+                                if (retorno != null )
+                                    listaOperacoes.AddRange(retorno);
+
+
+                            }
+                         
+                        }
+                    }
+                }
+                else
+                {
+                    return Ok(new List<Dominio.Models.DTO.Operacao>());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(401, "Erro ao retornar operacao por Id do Pacote " + ex.Message);
+            }
+            return Ok(listaOperacoes);
 
         }
 
@@ -93,7 +135,7 @@ namespace CupomEletronicoAPI.Controllers.V1
                 if (ModelState.IsValid)
                 {
                     if (operacoes.All(p=> !p.concluido ))
-                        return BadRequest(new { message = "Operações não estao concluidas! Pois precisam ser concluídas" });
+                        return BadRequest(new { message = "Nenhuma operação foi selecionada!" });
 
                     if (operacoes.All(p=> p.DataConclusao != null ))
                         return BadRequest(new { message = "Todas as Operações Já foram concluídas!" });
