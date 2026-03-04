@@ -18,6 +18,20 @@ builder.Services.ConfigureJWT();
 builder.Services.ConfigureDependences(Configuration);
 builder.Services.ConfigureAutoMapper();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("LiberadoGeral", policy =>
+    {
+        policy
+            .SetIsOriginAllowed(_ => true)
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
+
+
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly(),
                            typeof(Dominio.Queries.OperacaoQuery).Assembly,
                             typeof(Dominio.Commands.SalvarOperacaoCommand).Assembly);
@@ -37,10 +51,7 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseMiddleware<JwtMiddleware>();
 
 app.UseRouting();
-app.UseCors(x => x
- .AllowAnyOrigin()
- .AllowAnyMethod()
- .AllowAnyHeader());
+app.UseCors("LiberadoGeral");
 app.UseHttpsRedirection();
 app.UseCookiePolicy();
 app.UseAuthentication();//parte do JWT

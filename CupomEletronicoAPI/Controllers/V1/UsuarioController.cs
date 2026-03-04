@@ -67,17 +67,18 @@ namespace CupomEletronicoAPI.Controllers.V1
         [HttpPost]
         public async Task<IActionResult> RefreshToken(RefreshTokenView refreshTokenView)
         {
-            if (refreshTokenView != null && !string.IsNullOrEmpty(refreshTokenView.refreshtoken))
-            {
-                var response = await _usuarioService.RefreshToken(refreshTokenView);
+            /* if (refreshTokenView != null && !string.IsNullOrEmpty(refreshTokenView.refreshtoken))
+             {
+                 var response = await _usuarioService.RefreshToken(refreshTokenView);
 
-                if (response == null)
-                    return Unauthorized(new { message = "Invalid token" });
+                 if (response == null)
+                     return Unauthorized(new { message = "Invalid token" });
 
-                return Ok(response);
-            }
-            else
-                return Unauthorized(new { message = "Invalid token" });
+                 return Ok(response);
+             }
+             else
+                 return Unauthorized(new { message = "Invalid token" });*/
+            return Ok();
         }
 
     }

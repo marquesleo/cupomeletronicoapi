@@ -19,13 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "biblioteca", "biblioteca", 
 		biblioteca\Vestillo.Vendas.dll = biblioteca\Vestillo.Vendas.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Business", "vestillo\Vestillo.Business\Vestillo.Business.csproj", "{7C4178AE-8EBD-448B-B80C-D5B9CD687E37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Business", "..\vestillo\Vestillo.Business\Vestillo.Business.csproj", "{7C4178AE-8EBD-448B-B80C-D5B9CD687E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Connection", "vestillo\Vestillo.Connection\Vestillo.Connection.csproj", "{2E39CDD7-7D21-4B62-9E8A-8E6ECC7D6EF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Connection", "..\vestillo\Vestillo.Connection\Vestillo.Connection.csproj", "{2E39CDD7-7D21-4B62-9E8A-8E6ECC7D6EF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Core", "vestillo\Vestillo.Core\Vestillo.Core.csproj", "{E2E38793-CA31-4717-8165-B0DEF993F9F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Core", "..\vestillo\Vestillo.Core\Vestillo.Core.csproj", "{E2E38793-CA31-4717-8165-B0DEF993F9F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Lib", "vestillo\Vestillo.Lib\Vestillo.Lib.csproj", "{9B6ED396-AA3B-4E60-A45C-9604395A1E35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestillo.Lib", "..\vestillo\Vestillo.Lib\Vestillo.Lib.csproj", "{9B6ED396-AA3B-4E60-A45C-9604395A1E35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

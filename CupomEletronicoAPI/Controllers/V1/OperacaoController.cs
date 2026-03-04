@@ -27,8 +27,21 @@ namespace CupomEletronicoAPI.Controllers.V1
             try
             {
                 var retorno = await sender.Send(new Dominio.Queries.OperacaoQuery { IdFuncionario = idFuncionario });
+
                 if (retorno != null && retorno.Any())
+                {
+
+                    if (retorno.Any(p=> !string.IsNullOrEmpty(p.QuebraManual)))
+                    {
+                        RetornarTratamentoComQuebra(retorno);
+                    }
                     return Ok(retorno);
+                
+                }
+
+
+
+
                 else
                     return Ok(new List<Dominio.Models.DTO.Operacao>());
             }
@@ -40,6 +53,23 @@ namespace CupomEletronicoAPI.Controllers.V1
 
         }
 
+        private  void RetornarTratamentoComQuebra(List<Dominio.Models.DTO.Operacao> retorno)
+        {
+            bool temQuebraManual = false;
+            foreach (var item in retorno)
+            {
+                if (!string.IsNullOrEmpty(item.QuebraManual))
+                {
+                    temQuebraManual = true;
+                }
+
+                if (temQuebraManual)
+                {
+                    item.QuebraManual = "SIM";
+                }
+            }
+        }
+
         [HttpGet()]
         [Route("ObterPorPacote/{idPacote}")]
         public async Task<IActionResult> ObterOperacaoPorIdDoPacote(int idPacote)
@@ -48,7 +78,14 @@ namespace CupomEletronicoAPI.Controllers.V1
             {
                 var retorno = await sender.Send(new Dominio.Queries.NumeroDoPacoteQuery { NumeroDoPacote = idPacote });
                 if (retorno != null && retorno.Any())
+                {
+                    if (retorno.Any(p => !string.IsNullOrEmpty(p.QuebraManual)))
+                    {
+                        RetornarTratamentoComQuebra(retorno);
+                    }
+
                     return Ok(retorno);
+                }
                 else
                     return Ok(new List<Dominio.Models.DTO.Operacao>());
 
@@ -100,6 +137,12 @@ namespace CupomEletronicoAPI.Controllers.V1
             {
                 return StatusCode(401, "Erro ao retornar operacao por Id do Pacote " + ex.Message);
             }
+
+            if (listaOperacoes.Any(p => !string.IsNullOrEmpty(p.QuebraManual)))
+            {
+                RetornarTratamentoComQuebra(listaOperacoes);
+            }
+
             return Ok(listaOperacoes);
 
         }
