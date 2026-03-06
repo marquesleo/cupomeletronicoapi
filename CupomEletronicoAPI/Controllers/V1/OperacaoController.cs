@@ -154,7 +154,10 @@ namespace CupomEletronicoAPI.Controllers.V1
             try
             {
                 var retorno = await sender.Send(new Dominio.Queries.IdDoFuncionarioQuery {  idDoFuncionario = idUsuario });
-               
+
+                if (retorno == null)
+                    return Ok(0);
+                else
                     return Ok(retorno?.Tempo);
               
 
