@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,17 +28,13 @@ namespace CupomEletronicoAPI.Controllers.V1
                 if (retorno != null && retorno.Any())
                 {
 
-                    if (retorno.Any(p=> !string.IsNullOrEmpty(p.QuebraManual)))
+                    if (retorno.Any(p => !string.IsNullOrEmpty(p.QuebraManual)))
                     {
                         RetornarTratamentoComQuebra(retorno);
                     }
+
                     return Ok(retorno);
-                
                 }
-
-
-
-
                 else
                     return Ok(new List<Dominio.Models.DTO.Operacao>());
             }
@@ -55,19 +48,39 @@ namespace CupomEletronicoAPI.Controllers.V1
 
         private  void RetornarTratamentoComQuebra(List<Dominio.Models.DTO.Operacao> retorno)
         {
-            bool temQuebraManual = false;
-            foreach (var item in retorno)
-            {
-                if (!string.IsNullOrEmpty(item.QuebraManual))
-                {
-                    temQuebraManual = true;
-                }
+            var valorQuebraManual = retorno.Where(p=> !string.IsNullOrEmpty(p.QuebraManual)).FirstOrDefault().QuebraManual;
 
-                if (temQuebraManual)
+            if (valorQuebraManual != null)
+            {
+                string[] vetQuebraManual = valorQuebraManual.Split(';');
+                if (vetQuebraManual != null && vetQuebraManual.Any())
                 {
-                    item.QuebraManual = "SIM";
+                    
+                    string quebraManual = "Q";
+                    for (int i = 0; i < vetQuebraManual.Length; i++)
+                    {
+                       
+                        foreach (var item in retorno)
+                        {
+                            
+                            var index = retorno.IndexOf(item);
+                            if (index >= Convert.ToInt32(vetQuebraManual[i]) - 1)
+                            {
+                                item.QuebraManual = quebraManual + (i + 1);
+                                
+                            }
+                            else if (!item.QuebraManual.Contains('Q'))
+                            {
+                                item.QuebraManual = "";
+                            }
+
+                           
+                        }
+                    }
                 }
+                
             }
+            
         }
 
         [HttpGet()]
@@ -118,9 +131,13 @@ namespace CupomEletronicoAPI.Controllers.V1
                             foreach (var item in vetorDistinto)
                             {
                                 var retorno = await sender.Send(new Dominio.Queries.NumeroDoPacoteQuery { NumeroDoPacote = Convert.ToInt32(item.Trim()) });
+                                if (retorno.Any(p => !string.IsNullOrEmpty(p.QuebraManual)))
+                                {
+                                    RetornarTratamentoComQuebra(retorno);
+                                }
+                                
                                 if (retorno != null )
                                     listaOperacoes.AddRange(retorno);
-
 
                             }
                          
