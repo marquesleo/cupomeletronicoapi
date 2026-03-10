@@ -73,8 +73,6 @@ namespace CupomEletronicoAPI.Controllers.V1
                             {
                                 item.QuebraManual = "";
                             }
-
-                           
                         }
                     }
                 }
