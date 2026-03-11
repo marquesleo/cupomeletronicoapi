@@ -14,11 +14,13 @@ namespace CupomEletronicoAPI.Controllers.V1
     public class UsuarioController : BaseController
     {
         private Dominio.Services.Interface.IUsuario _usuarioService;
+        private readonly ILogger<UsuarioController> _logger;
         public UsuarioController(Dominio.Services.Interface.IUsuario usuarioService,
-                                 IConfiguration configuration):base(configuration)
+                                 IConfiguration configuration,
+                                 ILogger<UsuarioController> logger):base(configuration)
         {
             this._usuarioService = usuarioService;
-
+            this._logger = logger;  
         }
 
 
@@ -39,23 +41,34 @@ namespace CupomEletronicoAPI.Controllers.V1
             {
                 if (ModelState.IsValid)
                 { 
+                    _logger.LogInformation("[UsuarioController][Autenticar] Begin");
+                    _logger.LogInformation("[UsuarioController][Autenticar] Retornando usuario");
                     var usuario = _usuarioService.ObterUsuario(usuarioViewModel.QrCode);
-                   
+
                     if (usuario == null || usuario.Id == 0)
+                    {
+                        _logger.LogWarning("[UsuarioController][Autenticar] Usuario nao encontrado ou invalido");
                         return BadRequest(new { message = "Usuário ou senha inválidos" });
+                    }
 
+                    _logger.LogInformation("[UsuarioController][Autenticar] Usuario retornado");
+                    _logger.LogInformation("[UsuarioController][Autenticar] Retornando token ");
                     var response = _usuarioService.Authenticate(usuario);
-
+                    _logger.LogInformation("[UsuarioController][Autenticar] Token Retornado ");
                     return Ok(response);
 
                 }
                 else
+                {
+                    _logger.LogWarning("[UsuarioController][Autenticar] Usuario nao encontrado ou invalido");
                     return BadRequest(new { message = "Usuário ou senha inválidos" });
+                }
 
             }
             catch (Exception ex)
             {
-                
+                _logger.LogError(ex.Message);
+                _logger.LogError(ex.StackTrace);
                 return StatusCode(500, new { message = ex.Message });
             }
 

@@ -2,7 +2,9 @@
 using CupomEletronicoAPI;
 using CupomEletronicoAPI.Extensions;
 using MediatR;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var Configuration = builder.Configuration;
@@ -30,7 +32,15 @@ builder.Services.AddCors(options =>
     });
 });
 
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log-.txt", 
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: 30)
+    .CreateLogger();
 
+
+builder.Host.UseSerilog();
 
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly(),
                            typeof(Dominio.Queries.OperacaoQuery).Assembly,
@@ -56,7 +66,19 @@ app.UseHttpsRedirection();
 app.UseCookiePolicy();
 app.UseAuthentication();//parte do JWT
 app.UseAuthorization();
+app.UseSerilogRequestLogging();
 
+var options = new ForwardedHeadersOptions
+{
+    ForwardedHeaders = 
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto
+};
+
+options.KnownNetworks.Clear();
+options.KnownProxies.Clear();
+
+app.UseForwardedHeaders(options);
 
 
 app.UseEndpoints(endpoints =>

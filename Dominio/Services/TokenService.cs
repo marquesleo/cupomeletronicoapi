@@ -26,7 +26,7 @@ namespace Dominio.Services
                     new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
 
                     }),
-                    Expires = DateTime.UtcNow.AddHours(12),
+                    Expires = DateTime.UtcNow.AddDays(30),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
 
                 };
