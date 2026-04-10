@@ -1,36 +1,44 @@
 {
   "version": 2,
-  "dgSpecHash": "lvWQcilrOMI=",
+  "dgSpecHash": "1KionrF/FnU=",
   "success": true,
-  "projectFilePath": "/Users/leomarquesilva/cupomeletronicoapi/Dominio/Dominio.csproj",
+  "projectFilePath": "C:\\fontes\\cupomeletronicoapi\\Dominio\\Dominio.csproj",
   "expectedPackageFiles": [
-    "/Users/leomarquesilva/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/mediatr/11.1.0/mediatr.11.1.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.0.0/mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.identitymodel.abstractions/6.29.0/microsoft.identitymodel.abstractions.6.29.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.29.0/microsoft.identitymodel.jsonwebtokens.6.29.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.identitymodel.logging/6.29.0/microsoft.identitymodel.logging.6.29.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.identitymodel.tokens/6.29.0/microsoft.identitymodel.tokens.6.29.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/system.identitymodel.tokens.jwt/6.29.0/system.identitymodel.tokens.jwt.6.29.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
-    "/Users/leomarquesilva/.nuget/packages/system.text.json/4.7.2/system.text.json.4.7.2.nupkg.sha512"
+    "C:\\Users\\Leo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.29.0\\microsoft.identitymodel.abstractions.6.29.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.29.0\\microsoft.identitymodel.jsonwebtokens.6.29.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.identitymodel.logging\\6.29.0\\microsoft.identitymodel.logging.6.29.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.29.0\\microsoft.identitymodel.tokens.6.29.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.29.0\\system.identitymodel.tokens.jwt.6.29.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
   ],
   "logs": [
     {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
       "code": "NU1902",
       "level": "Warning",
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.29.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "projectPath": "/Users/leomarquesilva/cupomeletronicoapi/Dominio/Dominio.csproj",
       "warningLevel": 1,
-      "filePath": "/Users/leomarquesilva/cupomeletronicoapi/Dominio/Dominio.csproj",
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.29.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net6.0"
