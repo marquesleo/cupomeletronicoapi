@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using AutoMapper;
-using Dominio.Handlers;
+﻿using AutoMapper;
 using Dominio.Models.DTO;
 using MediatR;
 
