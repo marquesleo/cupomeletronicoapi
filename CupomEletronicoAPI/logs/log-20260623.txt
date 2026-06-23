@@ -1,0 +1,69 @@
+2026-06-23 11:32:38.433 -03:00 [INF] User profile is available. Using 'C:\Users\Leo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-23 11:32:38.617 -03:00 [INF] Creating key {90e6a15d-20e3-4b24-a773-3e3c2794333e} with creation date 2026-06-23 14:32:38Z, activation date 2026-06-23 14:32:38Z, and expiration date 2026-09-21 14:32:38Z.
+2026-06-23 11:32:38.640 -03:00 [INF] Writing data to file 'C:\Users\Leo\AppData\Local\ASP.NET\DataProtection-Keys\key-90e6a15d-20e3-4b24-a773-3e3c2794333e.xml'.
+2026-06-23 11:32:39.206 -03:00 [INF] Now listening on: https://localhost:7262
+2026-06-23 11:32:39.208 -03:00 [INF] Now listening on: http://localhost:5266
+2026-06-23 11:32:39.356 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-23 11:32:39.377 -03:00 [INF] Hosting environment: Development
+2026-06-23 11:32:39.399 -03:00 [INF] Content root path: C:\fontes\cupomeletronicoapi\CupomEletronicoAPI\
+2026-06-23 11:32:41.697 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger - -
+2026-06-23 11:32:42.122 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger - - - 301 0 - 433.7361ms
+2026-06-23 11:32:42.125 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/index.html - -
+2026-06-23 11:32:42.278 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/index.html - - - 200 - text/html;charset=utf-8 153.3266ms
+2026-06-23 11:32:42.290 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/swagger-ui.css - -
+2026-06-23 11:32:42.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - -
+2026-06-23 11:32:42.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/swagger-ui-bundle.js - -
+2026-06-23 11:32:42.292 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/swagger-ui-standalone-preset.js - -
+2026-06-23 11:32:42.300 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - - - 200 13772 application/javascript;+charset=utf-8 9.0137ms
+2026-06-23 11:32:42.404 -03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-06-23 11:32:42.405 -03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-06-23 11:32:42.453 -03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-06-23 11:32:42.454 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 163.9816ms
+2026-06-23 11:32:42.454 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/swagger-ui.css - - - 200 144929 text/css 164.4616ms
+2026-06-23 11:32:42.492 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 202.2362ms
+2026-06-23 11:32:43.398 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_vs/browserLink - -
+2026-06-23 11:32:43.535 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 136.6959ms
+2026-06-23 11:32:43.802 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/v1/swagger.json - -
+2026-06-23 11:32:43.830 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 29.1188ms
+2026-06-23 11:32:44.048 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/favicon-32x32.png - -
+2026-06-23 11:32:44.076 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-06-23 11:32:44.080 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/favicon-32x32.png - - - 200 628 image/png 32.0910ms
+2026-06-23 11:33:56.283 -03:00 [INF] User profile is available. Using 'C:\Users\Leo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-23 11:33:56.915 -03:00 [INF] Now listening on: https://localhost:7262
+2026-06-23 11:33:56.919 -03:00 [INF] Now listening on: http://localhost:5266
+2026-06-23 11:33:57.076 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-23 11:33:57.081 -03:00 [INF] Hosting environment: Development
+2026-06-23 11:33:57.081 -03:00 [INF] Content root path: C:\fontes\cupomeletronicoapi\CupomEletronicoAPI\
+2026-06-23 11:33:58.372 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/index.html - -
+2026-06-23 11:33:58.844 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/index.html - - - 200 - text/html;charset=utf-8 479.0284ms
+2026-06-23 11:33:58.926 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - -
+2026-06-23 11:33:59.153 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - - - 200 13772 application/javascript;+charset=utf-8 227.2332ms
+2026-06-23 11:33:59.947 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_vs/browserLink - -
+2026-06-23 11:34:00.904 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 956.9652ms
+2026-06-23 11:34:01.135 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/v1/swagger.json - -
+2026-06-23 11:34:01.305 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 170.1085ms
+2026-06-23 11:34:59.349 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/api/v1/usuario/version - -
+2026-06-23 11:34:59.703 -03:00 [INF] Executing endpoint 'CupomEletronicoAPI.Controllers.V1.UsuarioController.Version (CupomEletronicoAPI)'
+2026-06-23 11:34:59.750 -03:00 [INF] Route matched with {action = "Version", controller = "Usuario"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Version() on controller CupomEletronicoAPI.Controllers.V1.UsuarioController (CupomEletronicoAPI).
+2026-06-23 11:37:16.180 -03:00 [INF] User profile is available. Using 'C:\Users\Leo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-23 11:37:16.708 -03:00 [INF] Now listening on: https://localhost:7262
+2026-06-23 11:37:16.711 -03:00 [INF] Now listening on: http://localhost:5266
+2026-06-23 11:37:17.593 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-23 11:37:18.635 -03:00 [INF] Hosting environment: Development
+2026-06-23 11:37:18.637 -03:00 [INF] Content root path: C:\fontes\cupomeletronicoapi\CupomEletronicoAPI\
+2026-06-23 11:37:18.704 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/index.html - -
+2026-06-23 11:37:19.225 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/index.html - - - 200 - text/html;charset=utf-8 529.2988ms
+2026-06-23 11:37:19.290 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - -
+2026-06-23 11:37:19.315 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - - - 200 13772 application/javascript;+charset=utf-8 24.9007ms
+2026-06-23 11:37:20.435 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_vs/browserLink - -
+2026-06-23 11:37:20.775 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 340.4875ms
+2026-06-23 11:37:20.846 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/swagger/v1/swagger.json - -
+2026-06-23 11:37:20.868 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 21.8896ms
+2026-06-23 11:37:25.957 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/api/v1/usuario/version - -
+2026-06-23 11:37:26.142 -03:00 [INF] Executing endpoint 'CupomEletronicoAPI.Controllers.V1.UsuarioController.Version (CupomEletronicoAPI)'
+2026-06-23 11:37:26.166 -03:00 [INF] Route matched with {action = "Version", controller = "Usuario"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Version() on controller CupomEletronicoAPI.Controllers.V1.UsuarioController (CupomEletronicoAPI).
+2026-06-23 11:57:52.933 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-06-23 11:57:52.950 -03:00 [INF] Executed action CupomEletronicoAPI.Controllers.V1.UsuarioController.Version (CupomEletronicoAPI) in 1226773.2422ms
+2026-06-23 11:57:52.961 -03:00 [INF] Executed endpoint 'CupomEletronicoAPI.Controllers.V1.UsuarioController.Version (CupomEletronicoAPI)'
+2026-06-23 11:57:52.965 -03:00 [INF] HTTP GET /api/v1/usuario/version responded 200 in 1226826.1898 ms
+2026-06-23 11:57:52.970 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/api/v1/usuario/version - - - 200 - text/plain;+charset=utf-8 1227012.6367ms

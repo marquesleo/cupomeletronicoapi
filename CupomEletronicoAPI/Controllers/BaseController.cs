@@ -18,14 +18,17 @@ namespace CupomEletronicoAPI.Controllers
         {
             var cript = new Vestillo.Lib.Cripto();
             var s = config.GetConnectionString("db");
-            string password = s
-                .Split(';')
-                .FirstOrDefault(part => part.StartsWith("pwd="))
-                ?.Split('=')[1];
-            
-            var valorSemCriptografia =  cript.Decrypt(password);
-            s = s.Replace(password, valorSemCriptografia);
-            return s;
+            var password = s
+            .Split(';')
+            .FirstOrDefault(p => p.StartsWith("pwd=", StringComparison.OrdinalIgnoreCase))
+            ?.Substring(4);
+
+            if (string.IsNullOrEmpty(password))
+                return s;
+
+            var valorSemCriptografia = cript.Decrypt(password);
+
+            return s.Replace($"pwd={password}", $"pwd={valorSemCriptografia}");
         }
         public BaseController(IConfiguration configuration)
         {

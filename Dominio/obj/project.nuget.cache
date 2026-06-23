@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1KionrF/FnU=",
+  "dgSpecHash": "YESy8a/Evcw=",
   "success": true,
   "projectFilePath": "C:\\fontes\\cupomeletronicoapi\\Dominio\\Dominio.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,10 @@
     "C:\\Users\\Leo\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.29.0\\microsoft.identitymodel.tokens.6.29.0.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\runtime.any.system.text.encoding\\4.3.0\\runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.29.0\\system.identitymodel.tokens.jwt.6.29.0.nupkg.sha512",
+    "C:\\Users\\Leo\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
@@ -31,7 +34,8 @@
       "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
       "libraryId": "AutoMapper",
       "targetGraphs": [
-        "net6.0"
+        "net6.0",
+        "net6.0/win-x64"
       ]
     },
     {
@@ -41,7 +45,8 @@
       "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.29.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
-        "net6.0"
+        "net6.0",
+        "net6.0/win-x64"
       ]
     }
   ]
