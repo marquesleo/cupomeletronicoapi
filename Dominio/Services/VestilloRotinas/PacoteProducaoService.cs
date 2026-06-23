@@ -31,9 +31,11 @@ namespace Dominio.Services.VestilloRotinas
             {
                 foreach (var item in operacoes)
                 {
+                    
                     PacoteProducaoRepository.InsertOperacaoCupom(item.PacoteId.Value, item.OperacaoPadraoId.Value,
                                                                  item.Sequencia, item.IdFuncionario.Value,
                                                                  Convert.ToDouble(item.TempoTotal));
+                    Thread.Sleep(TimeSpan.FromSeconds(3));
                 }
             }
             catch (Exception ex)
